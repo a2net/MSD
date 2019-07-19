@@ -2,6 +2,10 @@
 
 ## Small REST service for ships
 
+Write a simple REST service to get a list of ships and add ships.
+
+This project is powered by.
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>
