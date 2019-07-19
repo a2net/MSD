@@ -65,6 +65,22 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## Endpoints
+`GET /ships`
+Get a list of ships
+
+`POST /ships`
+Create a new ship record
+
+## Modal
+```
+Ship {
+    id?: Number;
+    name: String;
+    Speed: String
+}
+```
+
 ## License
 
   Nest is [MIT licensed](LICENSE).
