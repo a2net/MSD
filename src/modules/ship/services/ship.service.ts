@@ -6,18 +6,14 @@ import { Ship } from 'src/modal/shipt.modal';
 
 @Injectable()
 export class ShipService {
-    constructor(@InjectModel('Ship') private readonly shipModel: Model<Ship>) { }
+  constructor(@InjectModel('Ship') private readonly shipModel: Model<Ship>) {}
 
-    async create(createShipDto: Ship): Promise<Ship> {
-        try {
-            const createdShip = new this.shipModel(createShipDto);
-            return await createdShip.save();
-        } catch (e) {
-            return e.message;
-        }
+  async create(createShipDto: Ship): Promise<Ship> {
+    const createdShip = new this.shipModel(createShipDto);
+    return await createdShip.save();
   }
 
-    async findAll(): Promise<Ship[]> {
-        return await this.shipModel.find().exec();
-    }
+  async findAll(): Promise<Ship[]> {
+    return await this.shipModel.find().exec();
+  }
 }
