@@ -8,6 +8,7 @@ import {
   UseFilters,
   Put,
   Param,
+  Delete,
 } from '@nestjs/common';
 
 import { Ship } from 'src/modal/shipt.modal';
@@ -67,5 +68,17 @@ export class ShipController {
   @Put(':id')
   async updateOne(@Param('id') id: Ship['_id'], @Body() ship: Ship): Promise<Ship> {
     return this.shipService.updateOne(id, ship);
+  }
+
+  /**
+   * Delete single ship
+   * 
+   * @param {Ship['_id']} id
+   * @returns {Promise<any>}
+   * @memberof ShipController
+   */
+  @Delete(':id')
+  async deleteOne(@Param('id') id: Ship['_id']): Promise<any> {
+    return this.shipService.deleteOne(id);
   }
 }
