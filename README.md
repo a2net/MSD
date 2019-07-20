@@ -72,6 +72,12 @@ Get a list of ships
 `POST /ships`
 Create a new ship record
 
+`PUT /ships/{id}`
+Update single ship
+
+`DELETE /ships/{id}`
+Remove single ship record
+
 ## Modal
 ```
 Ship {
