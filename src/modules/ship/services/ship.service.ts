@@ -16,4 +16,8 @@ export class ShipService {
   async findAll(): Promise<Ship[]> {
     return await this.shipModel.find().exec();
   }
+
+  async updateOne(_id: Ship['_id'], ship: Ship): Promise<Ship> {
+    return await this.shipModel.findOneAndUpdate({_id}, {$set: ship, $inc: { __v: 1 }});
+  }
 }

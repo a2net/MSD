@@ -3,10 +3,11 @@ import {
   Get,
   Post,
   Body,
-  Catch,
   Res,
   HttpStatus,
   UseFilters,
+  Put,
+  Param,
 } from '@nestjs/common';
 
 import { Ship } from 'src/modal/shipt.modal';
@@ -53,5 +54,18 @@ export class ShipController {
   @UseFilters(BadRequestFilter, MongoExceptionFilter)
   async createOne(@Body() createShipDto: Ship): Promise<Ship> {
     return await this.shipService.create(createShipDto);
+  }
+
+  /**
+   * Update single ship
+   *
+   * @param {Ship['_id']} id
+   * @param {Ship} ship
+   * @returns {Promise<Ship>}
+   * @memberof ShipController
+   */
+  @Put(':id')
+  async updateOne(@Param('id') id: Ship['_id'], @Body() ship: Ship): Promise<Ship> {
+    return this.shipService.updateOne(id, ship);
   }
 }
