@@ -1,5 +1,3 @@
-# MSD test
-
 ## Small REST service for ships
 
 Write a simple REST service to get a list of ships and add ships.
